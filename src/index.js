@@ -8,12 +8,15 @@ import App from './components/App/app';
 
 // == Import : local
 import './styles/index.scss';
+import { UserContextProvider } from './context/userContext';
 import * as serviceWorker from './serviceWorker';
 
 const rootReactElement = (
     <React.StrictMode>
         <Router>
-            <App />
+            <UserContextProvider>
+                <App />
+            </UserContextProvider>
         </Router>
     </React.StrictMode>
 );

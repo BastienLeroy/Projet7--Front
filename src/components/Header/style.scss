@@ -1,0 +1,20 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    background-color: lightgrey;
+    padding: .5rem 1rem;
+
+    .Header-ImgDiv {
+        img {
+            width: 298.5px;
+        }
+    }
+    .Header-ProfileIcon {
+        width: 25px;
+        height: 25px;
+    }
+}
