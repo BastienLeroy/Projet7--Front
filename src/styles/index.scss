@@ -8,7 +8,11 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: lightgray;
+    background-color: rgb(221, 221, 221);
+    background-image: url(../assets/images/icongrey.png) ;
+    background-position: center;
+    background-repeat: no-repeat;
+
     
 
     #root {

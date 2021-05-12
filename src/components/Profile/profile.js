@@ -20,7 +20,7 @@ const Profile = () => {
     return (
         <div className="Profile">
             <div className="Profile_Title">
-                <h2>Mes Infos</h2>
+                <h2>Mes Informations personnelles</h2>
             </div>
             <div className ="Profile_Input">
                 <div className="Profile_InputContainer">
@@ -70,6 +70,9 @@ const Profile = () => {
             <div className="Profile_Container_Button">
                 <button className ="Profile_Container_Button_Submit" type="submit">
                     Valider
+                </button>
+                <button className ="Profile_Container_Button_Delete" type="submit">
+                    Supprimer le profil
                 </button>
             </div>
         </div>
