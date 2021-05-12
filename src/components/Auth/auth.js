@@ -1,5 +1,5 @@
 // == Import : npm
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { Link, useHistory } from 'react-router-dom';
@@ -11,11 +11,13 @@ import { UserContext } from '../../context/userContext';
 const Auth = () => {
 
     const [userState, userDispatch] = useContext(UserContext);
+
     const history = useHistory();
 
-    useEffect(() => {
-        console.log(userState);
-    }, [userState]);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [emailSignup, setEmailSignup] = useState('');
+    const [passwordSignup, setPasswordSignup] = useState('');
 
     const handleOnSubmit = async (e) => {
         e.preventDefault();
@@ -25,11 +27,11 @@ const Auth = () => {
         switch(formName) {
             case 'signin':
                 const dataSignin = {
-                    email: 'bastien.leroy31@gmail.com',
-                    password: '31Bastien31'
+                    email,
+                    password
                 };
 
-                const response = await axios.post(
+                const responseSignin = await axios.post(
                     'http://localhost:5000/api/auth/signin',
                     dataSignin,
                     {
@@ -38,23 +40,62 @@ const Auth = () => {
                     }
                 );
 
-                if (response.status === 200) {
+                if (responseSignin.status === 200) {
                     userDispatch({
                         type: 'SETVALUES',
                         isLogged: true,
-                        id: response.data.id,
-                        isMod: response.data.isMod,
-                        email: response.data.email,
-                        firstname: response.data.firstname,
-                        name: response.data.name
+                        id: responseSignin.data.id,
+                        imageUrl: responseSignin.data.image_url,
+                        isMod: responseSignin.data.isMod,
+                        email: responseSignin.data.email,
+                        firstname: responseSignin.data.firstname,
+                        name: responseSignin.data.name
                     })
                     history.push('/home');
                 }
                 break;
 
             case 'signup':
-                console.log("2")
+                const dataSignup = {
+                    email: emailSignup,
+                    password: passwordSignup
+                };
 
+                const responseSignup = await axios.post(
+                    'http://localhost:5000/api/auth/signup',
+                    dataSignup,
+                    {
+                        'withCredentials': true,
+                        headers: { 'Content-Type': 'application/json' }
+                    }
+                );
+
+                if (responseSignup.status === 201) {
+                    console.log(responseSignup);
+
+                    const response = await axios.post(
+                        'http://localhost:5000/api/auth/signin',
+                        dataSignup,
+                        {
+                            'withCredentials': true,
+                            headers: { 'Content-Type': 'application/json' }
+                        }
+                    );
+
+                    if (response.status === 200) {
+                        userDispatch({
+                            type: 'SETVALUES',
+                            isLogged: true,
+                            id: response.data.id,
+                            imageUrl: response.data.image_url,
+                            isMod: response.data.isMod,
+                            email: response.data.email,
+                            firstname: response.data.firstname,
+                            name: response.data.name
+                        })
+                        history.push('/profile');
+                    }
+                }
                 break;
             default: break;
         }
@@ -76,6 +117,8 @@ const Auth = () => {
                                 id='email'
                                 name='email'
                                 type='email'
+                                value={email}
+                                onChange={e => setEmail(e.currentTarget.value)}
                             />
                         </div>
                         <div className="Auth_Log_Container_Form_InputContainer">
@@ -84,6 +127,8 @@ const Auth = () => {
                                 id='password'
                                 name='password'
                                 type='password'
+                                value={password}
+                                onChange={e => setPassword(e.currentTarget.value)}
                             />
                         </div>
                         <button
@@ -109,6 +154,8 @@ const Auth = () => {
                                 id='emailSignUp'
                                 name='email'
                                 type='email'
+                                value={emailSignup}
+                                onChange={e => setEmailSignup(e.currentTarget.value)}
                             />
                         </div>
                         <div className="Auth_Log_Container_Form_InputContainer">
@@ -117,6 +164,8 @@ const Auth = () => {
                                 id='passwordSignUp'
                                 name='password'
                                 type='password'
+                                value={passwordSignup}
+                                onChange={e => setPasswordSignup(e.currentTarget.value)}
                             />
                         </div>
                         <button

@@ -5,6 +5,7 @@ export const UserContext = createContext();
 const initialState = {
     isLogged: false,
     id: null,
+    image_url: null,
     isMod: null,
     email: "",
     firstname: "",
@@ -17,10 +18,11 @@ const userReducer = (state, action) => {
             return {
                 isLogged: action.isLogged,
                 id: action.id,
+                image_url: action.imageUl,
                 isMod: action.isMod,
                 email: action.email,
-                firstname: action.firstname,
-                name: action.name
+                firstname: action.firstname === null ? '' : action.firstname,
+                name: action.name === null ? '' : action.name
             }
         case "RESETVALUES":
             return initialState;

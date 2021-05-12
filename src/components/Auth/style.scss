@@ -12,7 +12,7 @@
         width: 800px;
         margin-bottom: 2rem;
         border-radius: .25rem;
-        border: 1px solid black;
+        border: 1px solid rgb(138, 137, 137);
         padding: 1rem;
 
         .Auth_Log_Container {
@@ -31,6 +31,8 @@
                         width: 75px;
                     }
                     input {
+                        background-color: rgb(236, 236, 236);
+                        border: 0.25rem;
                         width: 200px;
                     }
                 }
