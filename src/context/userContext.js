@@ -18,7 +18,7 @@ const userReducer = (state, action) => {
             return {
                 isLogged: action.isLogged,
                 id: action.id,
-                image_url: action.imageUl,
+                image_url: action.imageUrl,
                 isMod: action.isMod,
                 email: action.email,
                 firstname: action.firstname === null ? '' : action.firstname,

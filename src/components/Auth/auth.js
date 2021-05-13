@@ -9,9 +9,7 @@ import './style.scss';
 import { UserContext } from '../../context/userContext';
 
 const Auth = () => {
-
     const [userState, userDispatch] = useContext(UserContext);
-
     const history = useHistory();
 
     const [email, setEmail] = useState('');

@@ -7,65 +7,71 @@
             font-size: 2rem;
         }
     }
-    .Profile_Input {
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 400px;
-        
-
-        .Profile_InputContainer{
-            margin-bottom: .5rem;
-            label {
-                display: inline-block;
-                width: 150px;
-                
-            }
-            input {
-                background-color: rgb(236, 236, 236);
-                border: 0.125rem;
-                width: 200px;
-                box-shadow: 2px 2px 5px black;
-                border-radius: 0.25rem;
-            }
-            input[type="file"] {
-                width: 250px;
-            }
-        }
-    }
-    .Profile_Container_Button{
-        width: 350px;
-        display: flex;
-        justify-content: space-around;
-        
-        .Profile_Container_Button_Submit{
-            border: none;
-            color: #fff;
-            text-transform: uppercase;
-            border-radius: .125rem;
-            background-color: #00c851;
-            padding: .8rem 2rem;
-            font-size: .8rem;
-            margin-top: 1rem;
-            width: 150px;
-            height: 60px;
-            button:hover {
-                transform: scale(1.2);
-            }
-        }
-        .Profile_Container_Button_Delete {
-            border: none;
-            color: #fff;
-            text-transform: uppercase;
-            border-radius: .125rem;
-            background-color: red;
-            padding: .8rem 2rem;
-            font-size: .8rem;
-            margin-top: 1rem;
-            width: 150px;
-            height: 60px;
-        }
-    }
+    .Profile_Form {
+        .Profile_Input {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 400px;
+            
     
+            .Profile_InputContainer{
+                margin-bottom: .5rem;
+                
+                .Profile_InputContainer_Img {
+                    max-width: 250px;
+                    max-height: 250px;
+                }
+                label {
+                    display: inline-block;
+                    width: 150px;
+                    
+                }
+                input {
+                    background-color: rgb(236, 236, 236);
+                    border: 0.125rem;
+                    width: 200px;
+                    box-shadow: 2px 2px 5px black;
+                    border-radius: 0.25rem;
+                }
+                input[type="file"] {
+                    width: 250px;
+                }
+            }
+        }
+        .Profile_Container_Button{
+            width: 350px;
+            display: flex;
+            justify-content: space-around;
+            
+            .Profile_Container_Button_Submit{
+                border: none;
+                color: #fff;
+                text-transform: uppercase;
+                border-radius: .125rem;
+                background-color: #00c851;
+                padding: .8rem 2rem;
+                font-size: .8rem;
+                margin-top: 1rem;
+                width: 150px;
+                height: 60px;
+                button:hover {
+                    transform: scale(1.2);
+                }
+            }
+            .Profile_Container_Button_Delete {
+                border: none;
+                color: #fff;
+                text-transform: uppercase;
+                border-radius: .125rem;
+                background-color: red;
+                padding: .8rem 2rem;
+                font-size: .8rem;
+                margin-top: 1rem;
+                width: 150px;
+                height: 60px;
+            }
+        }
+    }
 }

@@ -13,8 +13,20 @@
             width: 298.5px;
         }
     }
-    .Header-ProfileIcon {
-        width: 25px;
-        height: 25px;
+    .Header_Icons {
+        display: flex;
+        text-align: center;
+
+        > a {
+            padding-left: 1rem;
+        }
+        .Header-ProfileIcon {
+            width: 25px;
+            height: 25px;
+        }
+        .Header_Icons_Disconnect {
+            border: none;
+            background-color: transparent;
+        }
     }
 }
