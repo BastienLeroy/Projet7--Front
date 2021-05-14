@@ -104,11 +104,7 @@ const Auth = () => {
             <div className="Auth_Log">
                 <h2 className="Auth_Log_Title">Se Connecter</h2>
                 <div className="Auth_Log_Container">
-                    <form
-                        id="signin"
-                        className="Auth_Log_Container_Form"
-                        onSubmit={handleOnSubmit}
-                    >
+                    <form className="Auth_Log_Container_Form">
                         <div className="Auth_Log_Container_Form_InputContainer">
                             <label htmlFor='email'>Email</label>
                             <input
@@ -130,8 +126,10 @@ const Auth = () => {
                             />
                         </div>
                         <button
+                            id="signin"
                             className="Auth_Log_Container_Form_Button"
                             type='submit'
+                            onClick={handleOnSubmit}
                         >
                             Valider
                         </button>
@@ -141,11 +139,7 @@ const Auth = () => {
             <div className="Auth_Log">
                 <h2 className="Auth_Log_Title">Créer un compte</h2>
                 <div className="Auth_Log_Container">
-                    <form
-                        id="signup"
-                        className="Auth_Log_Container_Form"
-                        onSubmit={handleOnSubmit}
-                    >
+                    <form className="Auth_Log_Container_Form">
                         <div className="Auth_Log_Container_Form_InputContainer">
                             <label htmlFor='emailSignUp'>Email</label>
                             <input
@@ -167,8 +161,10 @@ const Auth = () => {
                             />
                         </div>
                         <button
+                            id="signup"
                             className="Auth_Log_Container_Form_Button"
                             type='submit'
+                            onClick={handleOnSubmit}
                         >
                             Valider
                         </button>
