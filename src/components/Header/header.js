@@ -4,9 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { faUserSlash } from '@fortawesome/free-solid-svg-icons';
-
+import { faUserCircle, faUserSlash } from '@fortawesome/free-solid-svg-icons';
 
 // == Import : local
 import logo from '../../assets/images/icon-left-font-monochrome-blalklklklck.png';

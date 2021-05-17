@@ -34,10 +34,14 @@ const Home = () => {
                 </div>
                 <div className="Home_Post">
                     {posts.length !== 0 && posts.map(postData => {
-                        return <Post dataPost={postData} userImage={userState.image_url} userId={userState.id} key={postData.id} />
-                    })
-                        
-                    }
+                        return <Post
+                            dataPost={postData}
+                            userImage={userState.image_url}
+                            userId={userState.id}
+                            userIsMod={userState.isMod}
+                            key={postData.id}
+                        />
+                    })}
                 </div>
             </div>
         </div>

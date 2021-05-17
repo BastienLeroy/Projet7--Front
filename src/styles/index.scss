@@ -8,11 +8,12 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: rgb(221, 221, 221);
-    background-image: url(../assets/images/icongrey.png) ;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50%;
+    //background-color: rgb(221, 221, 221);
+    background: no-repeat 100% fixed linear-gradient(40deg,#ffd86f,#fc6262) !important;
+    //background-image: url(../assets/images/icongrey.png) ;
+    //background-position: fixed;
+    //background-repeat: no-repeat;
+    //background-size: 50%;
 
     
 

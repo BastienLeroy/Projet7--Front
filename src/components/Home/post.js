@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faEdit, faCheck } from '@fortawesome/free-solid-svg-icons';
+
+import Comment from './comment';
 
 // == Import : local
 import './style.scss';
 
-const Post = ({ dataPost, userImage, userId }) => {
+const Post = ({ dataPost, userImage, userId, userIsMod }) => {
 
     const [comments, setComments] = useState([]);
     const [textareaValue, setTextareaValue] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [reFetchComments, setReFetchComments] = useState(false);
 
-    const handleOnClickDisplayComments = async (e) => {
+    const handleOnClickDisplayComments = async () => {
         setIsLoading(true);
         const getComments = await axios.get(`http://localhost:5000/api/comment/getAllComments?id=${dataPost.id}`);
 
@@ -28,7 +33,7 @@ const Post = ({ dataPost, userImage, userId }) => {
 
         const dataComment = {
             "postId": dataPost.id,
-            "userId": 12,
+            "userId": userId,
             "content": textareaValue
         };
 
@@ -81,17 +86,13 @@ const Post = ({ dataPost, userImage, userId }) => {
                     {comments.length !== 0 &&
                         <ul className="Post_Comments_List">
                             {comments.map(comment => {
-                                return <li className="Post_Comments_List_Item" key={comment.id}>
-                                    
-                                        <div className="Post_Comments_List_Item_Header">
-                                            <p>{comment.firstname} {comment.name}</p>
-                                            <p>{comment.date} {comment.time}</p>
-                                        </div>
-                                        <div className="Post_Comments_List_Item_content">
-                                            {comment.content}
-                                        </div>
-                                    
-                                </li>
+                                return <Comment
+                                    comment={comment}
+                                    reFetchComments={handleOnClickDisplayComments}
+                                    userId={userId}
+                                    userIsMod={userIsMod}
+                                    key={comment.id}
+                                />
                             })}
                         </ul>
                     }
