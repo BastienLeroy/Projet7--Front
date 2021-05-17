@@ -13,8 +13,8 @@ const Post = ({ dataPost, userImage, userId }) => {
     const handleOnClickDisplayComments = async (e) => {
         setIsLoading(true);
         const getComments = await axios.get(`http://localhost:5000/api/comment/getAllComments?id=${dataPost.id}`);
-        console.log("getComments :",getComments);
-        if (getComments.status === 200) {
+
+        if (getComments.data.length !== 0) {
             setComments(getComments.data);
             setIsLoading(false);
         } else {
@@ -36,7 +36,7 @@ const Post = ({ dataPost, userImage, userId }) => {
             'http://localhost:5000/api/comment/createComment',
             dataComment,
             {
-                'withCredentials': true,
+                withCredentials: true,
                 headers: { 'Content-Type': 'application/json' }
             }
         );
