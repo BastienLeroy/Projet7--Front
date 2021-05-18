@@ -128,7 +128,7 @@ const Post = ({ dataPost, userImage, userId, userIsMod, getPosts }) => {
                     <img src={dataPost.userImage} />
                     <p>{dataPost.firstname} {dataPost.name}</p>
                 </div>
-                <p>{dataPost.date} {dataPost.time}</p>
+                <p className="Post_Info_TitleImg_Date">{dataPost.date} {dataPost.time}</p>
             </div>
             <div className="Post_Img">
                 {isEdit

@@ -54,7 +54,7 @@
                 border: none;
                 color: #fff;
                 text-transform: uppercase;
-                border-radius: .125rem;
+                border-radius: .5rem;
                 background-color: #00c851;
                 padding: .8rem 2rem;
                 font-size: .8rem;
@@ -69,7 +69,7 @@
                 border: none;
                 color: #fff;
                 text-transform: uppercase;
-                border-radius: .125rem;
+                border-radius: .5rem;
                 background-color: red;
                 padding: .8rem 2rem;
                 font-size: .8rem;
@@ -79,4 +79,36 @@
             }
         }
     }
+}
+
+
+
+/*#######RESPONSIVE TABLETTE##############*/
+
+@media screen and (min-width : 768px) and (max-width: 1100px) {
+    .Profile {
+        margin-top: 3rem;
+        
+        .Profile_Form {
+            .Profile_InputContainer_Img_Profil {
+                align-self: center;
+            }
+        }
+    }
+
+}
+
+/*#######RESPONSIVE MOBILE##############*/
+
+@media screen and (max-width: 767px) {
+    .Profile {
+        margin-top: 3rem;
+        
+        .Profile_Form {
+            .Profile_InputContainer_Img_Profil {
+                align-self: center;
+            }
+        }
+    }
+
 }

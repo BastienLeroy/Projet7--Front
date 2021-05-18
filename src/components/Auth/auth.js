@@ -101,6 +101,8 @@ const Auth = () => {
 
     return (
         <div className="Auth">
+            <h1>Bienvenue sur notre réseau social ! </h1>
+            <h2>Veuillez vous inscrire ou vous connecter</h2>
             <div className="Auth_Log">
                 <h2 className="Auth_Log_Title">Se Connecter</h2>
                 <div className="Auth_Log_Container">

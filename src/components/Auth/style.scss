@@ -4,6 +4,15 @@
     align-items: center;
     justify-content: center;
     height: 500px;
+    >h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    >h2 {
+        
+        font-size: 1.2rem;
+    }
 
     .Auth_Log {
         display: flex;
@@ -15,7 +24,7 @@
         padding: 1rem;
 
         .Auth_Log_Title{
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         .Auth_Log_Container {

@@ -291,3 +291,69 @@
 @-webkit-keyframes spin {
     to { -webkit-transform: rotate(360deg); }
 }
+
+
+/*#######RESPONSIVE TABLETTE##############*/
+
+@media screen and (min-width : 768px) and (max-width: 1100px) {
+    .Home_Add_Post {
+        margin-top: 3rem;
+    }
+    .Post{
+        max-width: 700px;
+        margin-left: 3rem;
+    }
+    .Home_Container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .Home_Add_Post {
+            margin-top: 3rem;
+            max-width: 700px;
+            align-self: center;
+
+            .Home_Add_Post_Button{
+
+            }
+        }
+    }
+}
+
+
+/*#######RESPONSIVE MOBILE##############*/
+
+@media screen and (max-width: 767px) {
+    .Home_Add_Post {
+        margin-top: 3rem;
+    }
+    .Post{
+       .Post_Info_TitleImg {
+
+           > img {
+            width: 75px !important;
+            height: 75px !important;
+           }
+        }
+       .Post_Info_TitleImg_Date{
+        padding-left: 6rem;
+   }
+    }
+    .Home_Container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 350px;
+
+        .Home_Add_Post {
+            margin-top: 3rem;
+            max-width: 350px;
+            align-self: center;
+            .Home_Add_Post_Button{
+
+            }
+        }
+    }
+
+    
+}
