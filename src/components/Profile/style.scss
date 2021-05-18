@@ -8,6 +8,7 @@
         }
     }
     .Profile_Form {
+        margin-top: 4rem;
         .Profile_Input {
             margin-top: 2rem;
             display: flex;
@@ -16,12 +17,16 @@
             height: 400px;
             
     
-            .Profile_InputContainer{
+            .Profile_InputContainer, .Profile_InputContainer_Img{
                 margin-bottom: .5rem;
+                display: flex;
+                flex-direction: column-reverse;
                 
-                .Profile_InputContainer_Img {
+                .Profile_InputContainer_Img_Profil {
                     max-width: 250px;
                     max-height: 250px;
+                    border-radius: 100%;
+                    margin-bottom: 2rem;
                 }
                 label {
                     display: inline-block;

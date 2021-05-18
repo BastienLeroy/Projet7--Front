@@ -1,5 +1,5 @@
 // == Import : npm
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 // == Import : local
@@ -13,6 +13,7 @@ const Profile = () => {
     const [password, setPassword] = useState('');
     const [firstname, setFirstname] = useState(userState.firstname);
     const [name, setName] = useState(userState.name);
+    const [imageUrl, setImageUrl] = useState(userState.image_url);
     const [file, setFile] = useState([]);
 
     const handleOnClickSubmitButton = async (e) => {
@@ -24,10 +25,9 @@ const Profile = () => {
             firstname,
             name
         };
-        
-        if (password !== '') {
-            dataInput.password = password;
-        }
+
+        if (file.length === 0) dataInput.imageUrl = userState.image_url;
+        if (password !== '') dataInput.password = password;
     
         const formData = new FormData();
         formData.append('dataInput', JSON.stringify(dataInput));
@@ -43,6 +43,22 @@ const Profile = () => {
                 headers: {'content-type': 'multipart/form-data'}
             }
         );
+
+        console.log("response :", response);
+
+        if (response.status === 200) {
+            userDispatch({
+                type: 'SETVALUES',
+                isLogged: userState.isLogged,
+                id: userState.id,
+                isMod: userState.isMod,
+                imageUrl: response.data.imageUrl,
+                email: response.data.email,
+                firstname: response.data.firstname,
+                name: response.data.name
+            })
+            setImageUrl(response.data.imageUrl);
+        }
     };
 
     const handleOnClickDeletetButton = async (e) => {
@@ -104,8 +120,8 @@ const Profile = () => {
                             onChange={e => setPassword(e.currentTarget.value)}
                         />
                     </div>
-                    <div className="Profile_InputContainer">
-                        <img className="Profile_InputContainer_Img" src={userState.image_url} />
+                    <div className="Profile_InputContainer_Img">
+                        <img className="Profile_InputContainer_Img_Profil" src={imageUrl} />
                         <label htmlFor="image">Photo de profil</label>
                         <input
                             id='image'

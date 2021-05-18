@@ -16,7 +16,7 @@ const Comment = ({ comment, reFetchComments, userId, userIsMod }) => {
         if (userId === comment.user_id || userIsMod) {
             setUserCanEdit(true);
         }
-    }, [])
+    }, []);
 
     const handleOnClickValidCommentButton = async () => {
         const dataEditComment = {
